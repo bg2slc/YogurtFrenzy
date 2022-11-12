@@ -1,6 +1,6 @@
 <?php
 //In Class Include File
-//By Benjamin Garrett
+//By Team Yogurt Frenzy
 //Contains helper functions for use in COMP220 assignments.
 
 function writeHeaders($Heading="Welcome", $TitleBar="MySite")
@@ -40,6 +40,7 @@ function displayImage($FileName, $Alt="Alternate Text Here",
         width=\"$Width\"/>\n";
 }
 
+//TODO displayButton doesn't play well with images, may need a rework.
 function displayButton($Name, $Text="Button", $FileName="", $Alt="")
 {
     echo "<div>";
@@ -57,9 +58,7 @@ function displayButton($Name, $Text="Button", $FileName="", $Alt="")
 function displayContactInfo()
 {
     echo "\n<footer>";
-    echo "Questions? Comments?";
-    echo "<a href=\"mailto:benjamin.garrett2@student.sl.on.ca\">";
-    echo " Email benjamin.garrett2@student.sl.on.ca</a>";
+    echo "Made by the Yogurt Frenzy project";
     echo "</footer>";
 }
 

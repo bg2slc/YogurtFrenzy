@@ -1,16 +1,15 @@
 <?php
 //Robin and Ben's Assignment FIle
-
+require_once("include.php");
 
 
 
 //6 functions:
 
 //drawMenu
-
 function drawMenu()
 {
-
+    
 }
 
 
