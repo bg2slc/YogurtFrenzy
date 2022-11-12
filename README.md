@@ -3,7 +3,7 @@ Codename: YogurtFrenzy is the group assignment repo for Group 6 of COMP220
 +++++REQUIRED FOR SUBMISSION++++++
 main.php : main php file
 script.js: main js file
-style.css: main css file
+style/style.css: main css file
 editor.dat: dat file, 5 - 10 complete sentences in it
 include.php: include file with helper functions
 auth.txt: mysql authentication data
