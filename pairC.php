@@ -3,6 +3,7 @@
 
 //findTextInFile
 function findTextInFile() {
+  $a = "feline cat";
   
 }
 
