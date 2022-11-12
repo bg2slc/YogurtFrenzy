@@ -12,5 +12,5 @@ any images places in images/
 ++++++FILES NOT FOR SUBMISSION++++++
 createFonts.sql: database creation/reset script
 notes/ folder and anything contained inside.
-any php or js file that is not listed above, used for collaborating between pairs
+pairX.php, pairX.js, or similar files meant for collaborating between pairs.
 

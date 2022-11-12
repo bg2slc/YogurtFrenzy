@@ -1,26 +1,31 @@
 <?php
 //Robin and Ben's Assignment FIle
-require_once("include.php");
+require_once("include.php"); //left here for testing and to suppress errors
 
 
 
 //6 functions:
-
 //drawMenu
 function drawMenu()
 {
-    
+}
+function drawFileDropDown()
+{
 }
 
+function drawEditDropDown()
+{
 
-
-//drawFileDropDown
-//drawEditDropDown
-//drawFontDropDown
-//saveFile - Has 1 parameter
-//openFIle - Has no parameters
-
-
+}
+function drawFontDropDown() //DO NOT CODE, Pair B only
+{
+}
+function saveFile() //needs one parameter
+{
+}
+function openFile()
+{
+}
 
 //Filename is editor.dat. Display the messages below
 
