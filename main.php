@@ -17,7 +17,7 @@ if(true)    {
         /* Main Loop, which should run each time the page is loaded */
 $mysqlObj = createConnectionObject();
 
-writeHeaders("Yogurt Frenzy", "Yogurt Frenzy Notepad");
+writeHeaders("YogurtFrenzy", "YogurtFrenzy Notepad");
 
 /*  //Code from Assignment 1, only left here for quick reference
 if (isset($_POST['f_CreateTable']))

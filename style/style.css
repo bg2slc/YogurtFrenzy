@@ -1,0 +1,75 @@
+/* style.css for COMP220 Group Assignment
+ *
+ * colour scheme for reference: https://www.color-hex.com/color-palette/44311
+ *
+ * #123740	(18,55,64)      Dark, Borders and Element Backgrounds
+ * #549aab	(84,154,171)    Medium, Main Container Background
+ * #b0d7e1	(176,215,225)   Light, Normal text
+ * #f6f6f6	(246,246,246)   White, Headers and emphasis text
+ * #f1802d	(241,128,45)    Salmon, Links and Interactables
+ */
+
+body {
+    color: #b0d7e1; 
+    background-color: #295059;
+    font-size: 1.2em;
+}
+
+h1,h2,h3,h4,h5  {
+    color: #f6f6f6;
+}
+
+input[type="text"], textarea {
+    background-color: #123740; /** yellow gold, input background**/
+    font-size: 1.2em;
+}
+
+div {
+    border-left-width: 1px;
+    border-color: #123740; /** ruddy brown, border line colour **/
+}
+
+a:link   {
+    color: #f1802d;
+}
+
+a:visited   {
+    color: #f1802d; /** TODO Change this **/
+}
+
+button  {
+    margin: 0.2em;
+    background-color: #f1802d;
+}
+
+table, th, td   {
+    border: 1px solid #123740;
+    border-collapse: collapse;
+    padding: 0.2em;
+}
+
+div.header  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.buttonrow   {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+div.main  {
+    background-color: #549aab;
+    border: 2px solid #123740;
+}
+
+div.bordered   {
+    border: 1px solid #123740;
+    padding: 0.4em;
+}
+
+div.control    {
+    padding: 0.4em;
+}

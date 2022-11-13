@@ -10,15 +10,32 @@ function writeHeaders($Heading="Welcome", $TitleBar="MySite")
 <head>
 	<meta charset = \"UTF-8\">
 	<title>$TitleBar</title>\n
-	<link rel =\"stylesheet\" type = \"text/css\" href=\"style.css\"/>
+	<link rel =\"stylesheet\" type = \"text/css\" href=\"/style/style.css\"/>
 </head>
 <body>\n<form action=? method=\"post\">
-    <img src=\"tom.jpg\">
-    <h1>$Heading</h1>\n
-    <p><a href=?>Home</a></p>
+    <div class=\"header\">
+        <div>
+            <h1>$HeadingWritten by Ian Haworth, Brad Coyle, Emmett Scholtes, Dugan Lang, and Benjamin Garrett</h1>
+            <div class=\"buttonrow\">
+            </div>
+        </div>
+        <div><img src=\"images/yogurtcat.jpg\" height=\"100\" 
+    width=\"160\"></div>
+    <div class=\"main\">
 ";
 }
 
+function displayContactInfo()
+{
+    echo "\n\t<footer>Made by the Yogurt Frenzy project</footer>";
+}
+
+function writeFooters()
+{
+    echo "</div>";
+	displayContactInfo();
+    echo "\n</div>\n</form>\n</body>\n</html>";
+}
 function displayLabel($Label="My Label", $Name="")
 {
 	if ($Name == "")
@@ -55,22 +72,6 @@ function displayButton($Name, $Text="Button", $FileName="", $Alt="")
     echo "</div>\n";
 }
 
-function displayContactInfo()
-{
-    echo "\n<footer>";
-    echo "Made by the Yogurt Frenzy project";
-    echo "</footer>";
-}
-
-function writeFooters()
-{
-	displayContactInfo();
-    echo "
-    </form>\n
-	</body>\n
-	</html>
-	";
-}
 
 function createConnectionObject()
 {

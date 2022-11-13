@@ -2,14 +2,17 @@
 //Robin and Ben's Assignment FIle
 require_once("include.php"); //left here for testing and to suppress errors
 
-
-
 //6 functions:
 //drawMenu - Primary function for drawing menus.
-function drawMenu()
+function drawMenu($menuName, $dataList)
 {
-    echo "<select name=\"$menuName\">\n";
-
+    echo "<select name=\"" . $menuName . "\">\n";
+    for($index = 0; $index < sizeof($dataList); $index++)
+    {
+        echo "\t<option value=\"" . $dataList[$index] . "\"> " 
+            . $dataList[$index] . "</option>\n";
+    }
+    echo "</select>";
 }
 function drawFileDropDown()
 {
