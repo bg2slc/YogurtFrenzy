@@ -14,13 +14,15 @@ function writeHeaders($Heading="Welcome", $TitleBar="MySite")
 </head>
 <body>\n<form action=? method=\"post\">
     <div class=\"header\">
-        <div>
-            <h1>$HeadingWritten by Ian Haworth, Brad Coyle, Emmett Scholtes, Dugan Lang, and Benjamin Garrett</h1>
-            <div class=\"buttonrow\">
-            </div>
+        <div><h2>$Heading</h2>
+        <em>Written by Ian Haworth, Brad Coyle, Emmett Scholtes, Dugan Lang, and Benjamin Garrett</em>
+        <div class\"buttonrow\">";
+//code for button row goes here. Requires a File, Edit, and Font button.
+    echo "        </div>
+        <div><img src=\"images/yogurtcat.jpg\" height=\"250\" 
+    width=\"400\">
         </div>
-        <div><img src=\"images/yogurtcat.jpg\" height=\"100\" 
-    width=\"160\"></div>
+    </div>
     <div class=\"main\">
 ";
 }

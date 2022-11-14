@@ -13,20 +13,21 @@ body {
     color: #b0d7e1; 
     background-color: #295059;
     font-size: 1.2em;
+    padding: 0;
 }
 
 h1,h2,h3,h4,h5  {
-    color: #f6f6f6;
+    font-size: 1.2em;
 }
 
 input[type="text"], textarea {
-    background-color: #123740; /** yellow gold, input background**/
+    background-color: #123740;
     font-size: 1.2em;
 }
 
 div {
     border-left-width: 1px;
-    border-color: #123740; /** ruddy brown, border line colour **/
+    border-color: #123740;
 }
 
 a:link   {
@@ -49,6 +50,9 @@ table, th, td   {
 }
 
 div.header  {
+    color: #f6f6f6;
+    background-color: #123740;
+    margin: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -62,7 +66,7 @@ div.buttonrow   {
 
 div.main  {
     background-color: #549aab;
-    border: 2px solid #123740;
+    /*border: 2px solid #123740;*/
 }
 
 div.bordered   {
