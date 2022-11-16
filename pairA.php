@@ -29,10 +29,15 @@ function drawMenu($menuName, $dataList)
     echo "</div>
   </div>
   <div class=\"dropdown\">
+  ";
     <button class=\"dropbtn\">Edit</button>
-    <div class=\"dropdown-content\">
+       <div class=\"dropdown-content\">
       <label>Find: </label> <input type=\"text\"></input>
-      <div><input type=\"checkbox\">Case sensitive?</input> <input type="submit" value="Search"> </input></div>
+      <div><input type=\"checkbox\">Case sensitive?</input>
+      ";
+      displayButton("f_Search", "Search");
+     echo "
+     </div>
     </div>
   </div>
   <div class=\"dropdown\">
