@@ -22,20 +22,21 @@
 <?php
 //Pair C - Emmett and Dugan
 
-//findTextInFile.
-function findTextInFile($text) {
-    //What to look for.
-    $search = '$text';
-    //Read from file.
-    $lines = file('file.txt');
-    //Store true when text is found.
-    $pos = strpos($string, $lines);
+function findTextinFile($string, $text)
+{
+  $mystring=$string;
+
+  $findme=$text;
   
-    //Check if the line contains the string we're looking for, and print if it does.
-    if($pos === false) {
-        echo "<p>String " . $search . " not found</p>";
-    } else {
-        echo "<p>" . $search . " was found at position " . $pos + 1 . ".</p>";
-    }
+  $pos=strpos($mystring, $findme);
+
+  if($pos===false)
+  {
+    echo "<p>The string " . $findme . " was not found in the string " . $mystring . "</p>";
+  } 
+  else {
+    echo " <p>The string " . $findme . " was found in the string" . $mystring . "</p>";
+    echo " and exists at position " . $pos;
+  }
 }
 ?>
