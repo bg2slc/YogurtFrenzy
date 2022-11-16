@@ -4,6 +4,7 @@ require_once("include.php"); //left here for testing and to suppress errors
 
 //6 functions:
 //drawMenu - Primary function for drawing menus.
+//https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover
 function drawMenu($menuName, $dataList)
 {
     echo "<select name=\"" . $menuName . "\">\n";
