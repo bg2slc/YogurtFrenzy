@@ -37,6 +37,14 @@ function saveFile($fileText) //needs one parameter
 }
 function openFile()
 {
+    if (file_exists($filename))
+    {
+        
+    }
+    else
+    {
+        echo "Editor.dat does not exist. Please save file first.";
+    }
 }
 
 //Filename is editor.dat. Display the messages below
