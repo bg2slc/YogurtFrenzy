@@ -11,10 +11,10 @@ function findTextInFile() {
   }
 }
 
-//function findInText($search)
+//function findInText($text)
 {
   // What to look for
-  $search = 'foo';
+  $search = '$text';
   // Read from file
   $lines = file('file.txt');
   // Store true when text is found
