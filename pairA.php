@@ -17,14 +17,33 @@ function drawMenu($menuName, $dataList)
   </div>
 </div>
 **/
-    echo "<select name=\"" . $menuName . "\">\n";
-    for($index = 0; $index < sizeof($dataList); $index++)
-    {
-        echo "\t<option value=\"" . $dataList[$index] . "\"> " 
-            . $dataList[$index] . "</option>\n";
-    }
-    echo "</select>";
-}
+     echo"
+     
+    <div class=\"dropdown\">
+    <button class=\"dropbtn\">File</button>
+    <div class=\"dropdown-content\">
+      <input type=\"submit\" value=\"New\"> </input>
+      <input type=\"submit\" value=\"Open\"> </input>
+      <input type=\"submit\" value=\"Save\"> </input>
+      
+    </div>
+  </div>
+  <div class=\"dropdown\">
+    <button class=\"dropbtn\">Edit</button>
+    <div class=\"dropdown-content\">
+      <label>Find: </label> <input type=\"text\"></input>
+      <div><input type=\"checkbox\">Case sensitive?</input> <input type="submit" value="Search"> </input></div>
+    </div>
+  </div>
+  <div class=\"dropdown\">
+    <button class=\"dropbtn\">Font</button>
+    <div class=\"dropdown-content\">
+      <label>Font: </label> <input type=\"text\"></input>
+      <label>Size: </label> <input type=\"text\"></input>
+      <div><input type=\"checkbox\">Match Case</input> <input type="submit" value="Search"> </input></div>
+    </div>
+  </div>
+    "
 function drawFileDropDown()
 {
 }
