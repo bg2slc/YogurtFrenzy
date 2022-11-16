@@ -7,6 +7,17 @@ require_once("include.php"); //left here for testing and to suppress errors
 //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover
 function drawMenu($menuName, $dataList)
 {
+
+    /** 
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+  </div> */
+
     echo "<select name=\"" . $menuName . "\">\n";
     for($index = 0; $index < sizeof($dataList); $index++)
     {
@@ -28,6 +39,7 @@ function drawEditDropDown()
 }*/
 function saveFile($fileText) //needs one parameter
 {
+
    $text1 = $_POST['value1'];
    $filename = "editor.dat";
    $file = fopen( $filename, "w");
