@@ -32,14 +32,15 @@ function saveFile($fileText) //needs one parameter
    $file = fopen( $filename, "w");
    fwrite ($file,$text1);
    fclose($file);
-    
-    //probably wrong, but a start to get the text entered in the textbox to our file
 }
 function openFile()
 {
     if (file_exists($filename))
     {
-        
+        $handle= fopen($filename, "r");
+        $text = fread($handle);
+        fclose($handle);
+        return($text);
     }
     else
     {
