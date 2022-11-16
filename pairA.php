@@ -22,11 +22,11 @@ function drawMenu($menuName, $dataList)
     <div class=\"dropdown\">
     <button class=\"dropbtn\">File</button>
     <div class=\"dropdown-content\">
-      <input type=\"submit\" value=\"New\"> </input>
-      <input type=\"submit\" value=\"Open\"> </input>
-      <input type=\"submit\" value=\"Save\"> </input>
-      
-    </div>
+    ";
+    displayButton("f_New", "New");
+    displayButton("f_Open", "Open");
+    displayButton("f_Save", "Save");
+    echo "</div>
   </div>
   <div class=\"dropdown\">
     <button class=\"dropbtn\">Edit</button>
