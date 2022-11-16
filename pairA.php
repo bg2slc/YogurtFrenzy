@@ -12,12 +12,11 @@ function drawMenu($menuName, $dataList)
 <div class="dropdown">
   <button class="dropbtn">Dropdown</button>
   <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+    <label>Find: </label> <input type="text"></input>
+    <div><input type="checkbox">Match Case</input> <input type="submit" value="Search"> </input></div>
   </div>
-  </div> */
-
+</div>
+**/
     echo "<select name=\"" . $menuName . "\">\n";
     for($index = 0; $index < sizeof($dataList); $index++)
     {
