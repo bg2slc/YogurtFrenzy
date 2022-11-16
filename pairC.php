@@ -1,8 +1,7 @@
 <?php
 //Pair C - Emmett and Dugan
 
-//findTextInFile.
-function findTextInFile($text) {
+//function findInText($text) {
   //What to look for.
   $search = '$text';
   //Read from file.
@@ -17,5 +16,26 @@ function findTextInFile($text) {
     echo "the string: " . $search . "was found in the string" . $lines;
     echo " and exists at position " . $pos + 1;
   }
+}
+?>
+
+<?php
+//Pair C - Emmett and Dugan
+
+//findTextInFile.
+function findTextInFile($text) {
+    //What to look for.
+    $search = '$text';
+    //Read from file.
+    $lines = file('file.txt');
+    //Store true when text is found.
+    $pos = strpos($string, $lines);
+  
+    //Check if the line contains the string we're looking for, and print if it does.
+    if($pos === false) {
+        echo "<p>String " . $search . " not found</p>";
+    } else {
+        echo "<p>" . $search . " was found at position " . $pos + 1 . ".</p>";
+    }
 }
 ?>
