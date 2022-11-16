@@ -5,57 +5,40 @@ require_once("include.php"); //left here for testing and to suppress errors
 //6 functions:
 //drawMenu - Primary function for drawing menus.
 //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover
-function drawMenu($menuName, $dataList)
+function drawMenu()
 {
+     drawFileDropDown();
+     drawEditDropDown();
+     drawFontDropDown();
 
-    /** 
-<div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-    <label>Find: </label> <input type="text"></input>
-    <div><input type="checkbox">Match Case</input> <input type="submit" value="Search"> </input></div>
-  </div>
-</div>
-**/
-     echo"
-     
-    <div class=\"dropdown\">
-    <button class=\"dropbtn\">File</button>
-    <div class=\"dropdown-content\">
-    ";
-    displayButton("f_New", "New");
-    displayButton("f_Open", "Open");
-    displayButton("f_Save", "Save");
-    echo "</div>
-  </div>
-  <div class=\"dropdown\">
-  ";
-    <button class=\"dropbtn\">Edit</button>
-       <div class=\"dropdown-content\">
-      <label>Find: </label> <input type=\"text\"></input>
-      <div><input type=\"checkbox\">Case sensitive?</input>
-      ";
-      displayButton("f_Search", "Search");
-     echo "
-     </div>
-    </div>
-  </div>
-  <div class=\"dropdown\">
-    <button class=\"dropbtn\">Font</button>
-    <div class=\"dropdown-content\">
-      <label>Font: </label> <input type=\"text\"></input>
-      <label>Size: </label> <input type=\"text\"></input>
-      <div><input type=\"checkbox\">Match Case</input> <input type="submit" value="Search"> </input></div>
-    </div>
-  </div>
-    "
+}
+
 function drawFileDropDown()
 {
+    echo "
+    div class=\"dropdown\">
+    <button class=\"dropbtn\">File</button>
+    <div class=\"dropdown-content\">
+      <input type=\"submit\" value=\"New\"> </input>
+      <input type=\"submit\" value=\"Open\"> </input>
+      <input type=\"submit\" value=\"Save\"> </input>
+      
+    </div>
+  </div>
+  "
 }
 
 function drawEditDropDown()
 {
-
+    echo "
+    <div class=\"dropdown\">
+    <button class=\"dropbtn\">Edit</button>
+    <div class=\"dropdown-content\">
+      <label>Find: </label> <input type=\"text\"></input>
+      <div><input type=\"checkbox\">Case sensitive?</input> <input type="submit" value="Search"> </input></div>
+    </div>
+  </div>
+    "
 }
 /*function drawFontDropDown() //DO NOT CODE, Pair B only
 {
