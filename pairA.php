@@ -30,7 +30,24 @@ function saveFile($fileText) //needs one parameter
    $text1 = $_POST['value1'];
    $filename = "editor.dat";
    $file = fopen( $filename, "w");
+    if(!$handle)
+        {
+            echo "Error opening file.";
+        }
+    else
+        {
+            echo "File Opened.";
+
+        }
    fwrite ($file,$text1);
+        if(!$success)
+        {
+            echo "Error Saving File.";
+        }
+        else
+        {
+            echo "File Saved.";
+        }
    fclose($file);
 }
 function openFile()
