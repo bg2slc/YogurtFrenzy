@@ -25,8 +25,15 @@ function drawEditDropDown()
 /*function drawFontDropDown() //DO NOT CODE, Pair B only
 {
 }*/
-function saveFile() //needs one parameter
+function saveFile($fileText) //needs one parameter
 {
+   $text1 = $_POST['value1'];
+   $filename = "editor.dat";
+   $file = fopen( $filename, "w");
+   fwrite ($file,$text1);
+   fclose($file);
+    
+    //probably wrong, but a start to get the text entered in the textbox to our file
 }
 function openFile()
 {
