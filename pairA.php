@@ -18,7 +18,11 @@ function drawFileDropDown()
     echo "
     div class=\"dropdown\">
     <button class=\"dropbtn\">File</button>
-    <div class=\"dropdown-content\">
+    <div class=\"dropdown-content\">"
+        displayButton("f_New", "New");
+        displayButton("f_Open", "Open");
+        displayButton("f_Save", "Save");
+
       <input type=\"submit\" value=\"New\"> </input>
       <input type=\"submit\" value=\"Open\"> </input>
       <input type=\"submit\" value=\"Save\"> </input>
