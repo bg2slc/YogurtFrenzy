@@ -10,26 +10,25 @@ function drawMenu()
      drawFileDropDown();
      drawEditDropDown();
      drawFontDropDown();
-
 }
 
 function drawFileDropDown()
 {
     echo "
-    div class=\"dropdown\">
+    <div class=\"dropdown\">
     <button class=\"dropbtn\">File</button>
-    <div class=\"dropdown-content\">"
-        displayButton("f_New", "New");
-        displayButton("f_Open", "Open");
-        displayButton("f_Save", "Save");
+    <div class=\"dropdown-content\">";
+//        displayButton("f_New", "New");
+//        displayButton("f_Open", "Open");
+//        displayButton("f_Save", "Save");
 
-      <input type=\"submit\" value=\"New\"> </input>
+      echo "<input type=\"submit\" value=\"New\"> </input>
       <input type=\"submit\" value=\"Open\"> </input>
       <input type=\"submit\" value=\"Save\"> </input>
       
     </div>
-  </div>
-  "
+    </div>
+  ";
 }
 
 function drawEditDropDown()
@@ -39,10 +38,10 @@ function drawEditDropDown()
     <button class=\"dropbtn\">Edit</button>
     <div class=\"dropdown-content\">
       <label>Find: </label> <input type=\"text\"></input>
-      <div><input type=\"checkbox\">Case sensitive?</input> <input type="submit" value="Search"> </input></div>
+      <div><input type=\"checkbox\">Case sensitive?</input> <input type=\"submit\" value=\"Search\"> </input></div>
     </div>
   </div>
-    "
+    ";
 }
 /*function drawFontDropDown() //DO NOT CODE, Pair B only
 {
