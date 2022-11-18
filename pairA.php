@@ -18,9 +18,9 @@ function drawFileDropDown()
     <div class=\"dropdown\">
     <button class=\"dropbtn\">File</button>
     <div class=\"dropdown-content\">";
-//        displayButton("f_New", "New");
-//        displayButton("f_Open", "Open");
-//        displayButton("f_Save", "Save");
+        displayButton("f_New", "New");
+        displayButton("f_Open", "Open");
+        displayButton("f_Save", "Save");
 
       echo "<input type=\"submit\" value=\"New\"> </input>
       <input type=\"submit\" value=\"Open\"> </input>
@@ -43,9 +43,25 @@ function drawEditDropDown()
   </div>
     ";
 }
-/*function drawFontDropDown() //DO NOT CODE, Pair B only
+function drawFontDropDown() //DO NOT CODE, Pair B only
 {
-}*/
+
+    // Placeholder button
+    echo "
+    <div class=\"dropdown\">
+    <button class=\"dropbtn\">Font</button>
+    <div class=\"dropdown-content\">";
+        
+        //interface code goes here.
+        echo "<p>boo I'm a ghost</p>";
+      
+    echo "
+    </div>
+    </div>
+  ";
+}
+
+/**
 function saveFile($fileText) //needs one parameter
 {
 
@@ -94,6 +110,6 @@ function openFile()
 //-File opened
 //-Error opening file
 
-
+ */
 ?>
 
