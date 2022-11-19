@@ -39,6 +39,14 @@ echo "
     <div class=\"body\">";
 }
 
+// textarea practice here: https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_textarea
+function displayTextArea()
+{
+    echo "
+<!-- main text area for notepad -->
+    <textarea id=\"notepad\" name=\"notepad\" rows=\"10\" cols=\"80\"></textarea>
+    ";
+}
 
 
 //+++++++++++++++++++++ MAIN 
@@ -66,10 +74,7 @@ headerAndMenu($Title);
 
 if (isset($mysqlObj)) $mysqlObj->close();
 
-//openFile();
-//saveFile();
-//findTextInFile("a");
-//drawMenu();
+displayTextArea();
 echo "The text:";
 DisplayTextbox("text","test", 30, $textValue = "test text");
 echo "<p></p>";
