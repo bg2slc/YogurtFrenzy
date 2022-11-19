@@ -22,6 +22,7 @@ h1,h2,h3,h4,h5  {
 
 input[type="text"], textarea {
     background-color: #123740;
+    color: #f6f6f6;
     font-size: 1.2em;
 }
 
