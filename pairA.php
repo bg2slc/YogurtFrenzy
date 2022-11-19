@@ -22,10 +22,7 @@ function drawFileDropDown()
         displayButton("f_Open", "Open");
         displayButton("f_Save", "Save");
 
-/**      echo "<input type=\"submit\" value=\"New\"> </input>
-      <input type=\"submit\" value=\"Open\"> </input>
-      <input type=\"submit\" value=\"Save\"> </input>**/
-    echo "
+   echo "
     </div>
     </div>
   ";
@@ -46,7 +43,7 @@ function drawEditDropDown()
     </div>
     ";
 }
-function drawFontDropDown() //DO NOT CODE, Pair B only
+function drawFontDropDown() //code for PairB font stuff
 {
 
     // Placeholder button

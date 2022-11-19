@@ -3,7 +3,7 @@
 //By Team Yogurt Frenzy
 //Contains helper functions for use in COMP220 assignments.
 
-function writeHeaders($Heading="Welcome", $TitleBar="MySite")
+function beginHeaders($Heading="Welcome", $TitleBar="MySite")
 {
     echo "<!doctype html>
 <html>
@@ -18,10 +18,15 @@ function writeHeaders($Heading="Welcome", $TitleBar="MySite")
         <em>Written by Ian Haworth, Brad Coyle, Emmett Scholtes, Dugan Lang, and Benjamin Garrett</em>
         <div class\"buttonrow\">";
 //code for button row goes here. Requires a File, Edit, and Font button.
+}
+
+function endHeaders()
+{
     echo "        </div>
         <div><img src=\"images/yogurtcat.jpg\" height=\"250\" 
     width=\"400\">
         </div>
+    </div>
     </div>
     <div class=\"main\">
 ";

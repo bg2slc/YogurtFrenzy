@@ -3,6 +3,7 @@
 
 //+++++++++++++++++++++ SETUP
 require_once("include.php");
+require_once("pairA.php");
 //ERROR REPORTING - Set to true for error reporting
 //TODO: Disable this when ready for submitting
 if(true)    {
@@ -15,9 +16,6 @@ if(true)    {
 
 //+++++++++++++++++++++ MAIN 
         /* Main Loop, which should run each time the page is loaded */
-$mysqlObj = createConnectionObject();
-
-writeHeaders("YogurtFrenzy", "YogurtFrenzy Notepad");
 
 /*  //Code from Assignment 1, only left here for quick reference
 if (isset($_POST['f_CreateTable']))
@@ -35,8 +33,13 @@ else if (isset($_POST['f_IssueDelete']))
 else displayMainForm();
  */
 
+$mysqlObj = createConnectionObject();
+
+beginHeaders("YogurtFrenzy", "YogurtFrenzy Notepad");
+drawMenu();
+endHeaders();
+
 if (isset($mysqlObj)) $mysqlObj->close();
-writeFooters();
 
 //openFile();
 //saveFile();
@@ -51,5 +54,6 @@ DisplayTextbox("text","find", 10, $findValue = "s");
 DisplayButton("find","Find",$textValue,"Find"); 
 //findTextInFile($textValue, $findValue)\">Find</button>";
 
-
+//Footers go at end
+writeFooters();
 ?>
