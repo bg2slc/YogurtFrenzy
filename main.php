@@ -14,6 +14,33 @@ if(true)    {
 //+++++++++++++++++++++ FUNCTIONS
         /* Write primary PHP functions for use in MAIN here */
 
+function headerAndMenu($Title="YogurtFrenzy")
+{
+    echo "<!doctype html>
+<html>
+<head>
+	<meta charset = \"UTF-8\">
+	<title>$Title</title>\n
+	<link rel =\"stylesheet\" type = \"text/css\" href=\"/style/style.css\"/>
+</head>
+<body>\n<form action=? method=\"post\">
+    <div class=\"header\">
+        <div><h2>$Title Editor</h2>
+            <em>Written by Ian Haworth, Brad Coyle, Emmett Scholtes, Dugan Lang
+,Robin Hilliker and Benjamin Garrett</em>
+            <div>";
+            drawMenu();
+echo "
+            </div>
+        </div>
+        <div><img src=\"images/yogurtcat.jpg\" height=\"125\" 
+    width=\"200\"></div>
+    </div>
+    <div class=\"body\">";
+}
+
+
+
 //+++++++++++++++++++++ MAIN 
         /* Main Loop, which should run each time the page is loaded */
 
@@ -34,10 +61,8 @@ else displayMainForm();
  */
 
 $mysqlObj = createConnectionObject();
-
-beginHeaders("YogurtFrenzy", "YogurtFrenzy Notepad");
-drawMenu();
-endHeaders();
+$Title="YogurtFrenzy"; //Editor Title
+headerAndMenu($Title);
 
 if (isset($mysqlObj)) $mysqlObj->close();
 
