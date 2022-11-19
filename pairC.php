@@ -1,26 +1,21 @@
 <?php
 //Pair C - Emmett and Dugan
 
-function findTextinFile($string, $text)
+function findTextInFile($findtext, $text)
 {
   //text area
-  $mystring= $string;
+  $mystring= $findtext;
   //text to search
   $findme=$text;
-  
+
   $pos=strpos($mystring, $findme) +1;
 
   if($pos===false)
   {
-    echo "<p>The string " . $findme . " was not found in the string" . $mystring . "</p>";
+    echo "<p>The string " . $findme . " was not found in the string " . $mystring . "</p>";
   } 
   else {
-    echo " <p>The string " . $findme . " was found in the string" . $mystring . "</p>";
-    echo " and exists at position " . $pos;
+    echo " <p>The string " . $findme . " was found in the string " . $mystring . "</p>";
+    echo "<p> and exists at position " . $pos . "</p>";
   }
 }
-
-//main
-
-findTextinFile("abc","a");
-?>
