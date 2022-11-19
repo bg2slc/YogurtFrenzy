@@ -72,17 +72,23 @@ $mysqlObj = createConnectionObject();
 $Title="YogurtFrenzy"; //Editor Title
 headerAndMenu($Title);
 
-if (isset($mysqlObj)) $mysqlObj->close();
+echo "<form method=POST>";
 
-displayTextArea();
 echo "The text:";
-DisplayTextbox("text","test", 30, $textValue = "test text");
+DisplayTextbox("text","test", 30);
 echo "<p></p>";
 
 echo "The letter or word you want to search for:";
-DisplayTextbox("text","find", 10, $findValue = "s");
-DisplayButton("find","Find",$textValue,"Find"); 
-//findTextInFile($textValue, $findValue)\">Find</button>";
+DisplayTextbox("text","findText", 10);
+
+DisplayButton("findButton","Find");
+
+echo "</form>";
+if(array_key_exists('findButton', $_POST)) 
+{
+  findTextInFile($_POST["test"], $_POST["findText"]);
+  
+}
 
 //Footers go at end
 writeFooters();
