@@ -37,4 +37,19 @@ else displayMainForm();
 
 if (isset($mysqlObj)) $mysqlObj->close();
 writeFooters();
+
+//openFile();
+//saveFile();
+//findTextInFile("a");
+//drawMenu();
+echo "The text:";
+DisplayTextbox("text","test", 30, $textValue = "test text");
+echo "<p></p>";
+
+echo "The letter or word you want to search for:";
+DisplayTextbox("text","find", 10, $findValue = "s");
+DisplayButton("find","Find",$textValue,"Find"); 
+//findTextInFile($textValue, $findValue)\">Find</button>";
+
+
 ?>
