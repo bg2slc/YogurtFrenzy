@@ -15,7 +15,7 @@ function beginHeaders($Heading="Welcome", $TitleBar="MySite")
 <body>\n<form action=? method=\"post\">
     <div class=\"header\">
         <div><h2>$Heading</h2>
-        <em>Written by Ian Haworth, Brad Coyle, Emmett Scholtes, Dugan Lang, and Benjamin Garrett</em>
+        <em>Written by Ian Haworth, Brad Coyle, Emmett Scholtes, Dugan Lang,Robin Hilliker and Benjamin Garrett</em>
         <div class\"buttonrow\">";
 //code for button row goes here. Requires a File, Edit, and Font button.
 }
