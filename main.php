@@ -72,8 +72,6 @@ $mysqlObj = createConnectionObject();
 $Title="YogurtFrenzy"; //Editor Title
 headerAndMenu($Title);
 
-echo "<form method=POST>";
-
 echo "The text:";
 displayTextArea();
 //DisplayTextbox("text","test", 30);
@@ -84,7 +82,6 @@ DisplayTextbox("text","findText", 10);
 
 DisplayButton("findButton","Find");
 
-echo "</form>";
 if(array_key_exists('findButton', $_POST)) 
 {
   findTextInFile($_POST["test"], $_POST["findText"]);

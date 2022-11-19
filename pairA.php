@@ -4,7 +4,7 @@ require_once("include.php"); //left here for testing and to suppress errors
 
 //6 functions:
 //drawMenu - Primary function for drawing menus.
-//https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover
+//https://www.w3schools.com/howto/tryit.asp?fileName=tryhow_css_js_dropdown_hover
 function drawMenu()
 {
      drawFileDropDown();
@@ -61,23 +61,21 @@ function drawFontDropDown() //code for PairB font stuff
   ";
 }
 
-/**
 function saveFile($fileText) //needs one parameter
 {
 
-   $text1 = $_POST['value1'];
-   $filename = "editor.dat";
-   $file = fopen( $filename, "w");
+   $fileName = "editor.dat";
+   $file = fopen( $fileName, "w");
     if(!$handle)
-        {
+    {
             echo "Error opening file.";
-        }
+    }
     else
-        {
+    {
             echo "File Opened.";
 
-        }
-   fwrite ($file,$text1);
+    }
+    fwrite ($file,$fileText);
         if(!$success)
         {
             echo "Error Saving File.";
@@ -86,13 +84,14 @@ function saveFile($fileText) //needs one parameter
         {
             echo "File Saved.";
         }
-   fclose($file);
+    fclose($file);
 }
+
 function openFile()
 {
-    if (file_exists($filename))
+    if (file_exists($fileName))
     {
-        $handle= fopen($filename, "r");
+        $handle= fopen($fileName, "r");
         $text = fread($handle);
         fclose($handle);
         return($text);
@@ -103,13 +102,12 @@ function openFile()
     }
 }
 
-//Filename is editor.dat. Display the messages below
+//fileName is editor.dat. Display the messages below
 
 //-File Saved
 //-Error Saving FIle
 //-File opened
 //-Error opening file
 
- */
 ?>
 
