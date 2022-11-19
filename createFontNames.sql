@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS comp220db;
-CREATE DATABASE comp220db;
-USE comp220db;
+DROP DATABASE IF EXISTS COMP220db;
+CREATE DATABASE COMP220db;
+USE COMP220db;
 
 CREATE TABLE fontNames (fontName varchar(50), primary key (fontName));
 INSERT INTO fontNames VALUES ('Arial');
