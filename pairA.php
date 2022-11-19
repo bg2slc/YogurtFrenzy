@@ -22,10 +22,10 @@ function drawFileDropDown()
         displayButton("f_Open", "Open");
         displayButton("f_Save", "Save");
 
-      echo "<input type=\"submit\" value=\"New\"> </input>
+/**      echo "<input type=\"submit\" value=\"New\"> </input>
       <input type=\"submit\" value=\"Open\"> </input>
-      <input type=\"submit\" value=\"Save\"> </input>
-      
+      <input type=\"submit\" value=\"Save\"> </input>**/
+    echo "
     </div>
     </div>
   ";
@@ -33,14 +33,17 @@ function drawFileDropDown()
 
 function drawEditDropDown()
 {
+    /**<div><input type=\"checkbox\">Case sensitive?</input> <input type=\"submit\" value=\"Search\"> </input></div>*/
     echo "
     <div class=\"dropdown\">
     <button class=\"dropbtn\">Edit</button>
     <div class=\"dropdown-content\">
       <label>Find: </label> <input type=\"text\"></input>
-      <div><input type=\"checkbox\">Case sensitive?</input> <input type=\"submit\" value=\"Search\"> </input></div>
+      <div><input type=\"checkbox\">Case sensitive?</input>";
+    displayButton("f_Search", "Search");
+    echo "</div>
     </div>
-  </div>
+    </div>
     ";
 }
 function drawFontDropDown() //DO NOT CODE, Pair B only
