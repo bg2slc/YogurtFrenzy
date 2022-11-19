@@ -42,6 +42,8 @@ a:visited   {
 button  {
     margin: 0.2em;
     background-color: #f1802d;
+    padding-left: 3em;
+    padding-right: 3em;
 }
 
 table, th, td   {
