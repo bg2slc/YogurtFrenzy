@@ -27,7 +27,7 @@ function headerAndMenu($Title="YogurtFrenzy")
     <div class=\"header\">
         <div><h2>$Title Editor</h2>
             <em>Written by Ian Haworth, Brad Coyle, Emmett Scholtes, Dugan Lang
-,Robin Hilliker and Benjamin Garrett</em>
+, Robin Hilliker, and Benjamin Garrett</em>
             <div>";
             drawMenu();
 echo "
@@ -75,7 +75,8 @@ headerAndMenu($Title);
 echo "<form method=POST>";
 
 echo "The text:";
-DisplayTextbox("text","test", 30);
+displayTextArea();
+//DisplayTextbox("text","test", 30);
 echo "<p></p>";
 
 echo "The letter or word you want to search for:";
