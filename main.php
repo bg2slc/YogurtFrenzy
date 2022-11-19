@@ -26,8 +26,8 @@ function headerAndMenu($Title="YogurtFrenzy")
 <body>\n<form action=? method=\"post\">
     <div class=\"header\">
         <div><h2>$Title Editor</h2>
-            <em>Written by Ian Haworth, Brad Coyle, Emmett Scholtes, Dugan Lang
-, Robin Hilliker, and Benjamin Garrett</em>
+            <em>Written by Ian Haworth, Brad Coyle, Emmett Scholtes,
+Dugan Lang, Robin Hilliker, and Benjamin Garrett</em>
             <div>";
             drawMenu();
 echo "
