@@ -4,7 +4,7 @@ require_once("include.php"); //left here for testing and to suppress errors
 
 //6 functions:
 //drawMenu - Primary function for drawing menus.
-//https://www.w3schools.com/howto/tryit.asp?fileName=tryhow_css_js_dropdown_hover
+//https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover
 function drawMenu()
 {
      drawFileDropDown();
@@ -61,48 +61,41 @@ function drawFontDropDown() //code for PairB font stuff
   ";
 }
 
-function saveFile($fileText) //needs one parameter
+function saveFile($content) //needs one parameter
 {
-
-   $fileName = "editor.dat";
-   $file = fopen( $fileName, "w");
+    $message = "";
+    $filename = "editor.dat";
+    $handle = fopen($filename, "w");
     if(!$handle)
-    {
-            echo "Error opening file.";
-    }
+        $message = "Error opening file. ";
     else
-    {
-            echo "File Opened.";
-
-    }
-    fwrite ($file,$fileText);
+        $message =  "File Opened. ";
+    $success = fwrite($handle, $content);
         if(!$success)
-        {
-            echo "Error Saving File.";
-        }
+            $message = $message . "Error Saving File.";
         else
-        {
-            echo "File Saved.";
-        }
-    fclose($file);
+            $message += $message . "File Saved.";
+    displayLabel($message);
+    fclose($handle);
 }
 
 function openFile()
 {
-    if (file_exists($fileName))
+    $filename = "editor.dat";
+    if (file_exists($filename))
     {
-        $handle= fopen($fileName, "r");
+        $handle= fopen($filename, "r");
         $text = fread($handle);
         fclose($handle);
         return($text);
     }
     else
     {
-        echo "Editor.dat does not exist. Please save file first.";
+        echo "editor.dat does not exist. Please save file first.";
     }
 }
 
-//fileName is editor.dat. Display the messages below
+//filename is editor.dat. Display the messages below
 
 //-File Saved
 //-Error Saving FIle
