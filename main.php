@@ -12,20 +12,19 @@ if(true)    {
 }
 
 //+++++++++++++++++++++ FUNCTIONS
-        /* Write primary PHP functions for use in MAIN here */
-
-function headerAndMenu($Title="YogurtFrenzy")
+/* Write header tags and drawMenu() */
+function headerAndMenu($title="YogurtFrenzy")
 {
     echo "<!doctype html>
 <html>
 <head>
 	<meta charset = \"UTF-8\">
-	<title>$Title</title>\n
+	<title>$title</title>\n
 	<link rel =\"stylesheet\" type = \"text/css\" href=\"/style/style.css\"/>
 </head>
 <body>\n<form action=? method=\"post\">
     <div class=\"header\">
-        <div><h2>$Title Editor</h2>
+        <div><h2>$title Editor</h2>
             <em>Written by Ian Haworth, Brad Coyle, Emmett Scholtes,
 Dugan Lang, Robin Hilliker, and Benjamin Garrett</em>
             <div>";
@@ -39,8 +38,7 @@ echo "
     <div class=\"body\">";
 }
 
-// textarea practice here:
-// https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_textarea
+/* Write textarea tag, for user input and to display text from file */
 function displayTextArea($fileText="")
 {
     echo "
@@ -52,45 +50,33 @@ function displayTextArea($fileText="")
     ";
 }
 
+/* Attempt to write content to editor.dat, display relevant message, and reload
+ * content into textarea */
 function saveNotepad($fileText)
 {
     saveFile($fileText);
     displayTextArea($fileText);
 }
 
+/* Attempt to load content from editor.dat, display relevant message, and load
+ * content into textarea */
 function openNotepad()
 {
     $fileText = openFile();
     displayTextArea($fileText);
 }
 
+/* display generic message and empty textarea */
 function blankNotepad()
 {
+    displayLabel("Welcome to the YogurtFrenzy Editor!");
     displayTextArea("");
 }
 
 //+++++++++++++++++++++ MAIN 
-        /* Main Loop, which should run each time the page is loaded */
-
-/*  //Code from Assignment 1, only left here for quick reference
-if (isset($_POST['f_CreateTable']))
-  createTableForm($mysqlObj,$TableName);
-else if (isset($_POST['f_Save'])) 
-    saveRecordtoTableForm($mysqlObj,$TableName);
-else if (isset($_POST['f_AddRecord'])) 
-    addRecordForm($mysqlObj,$TableName);	   
-else if (isset($_POST['f_DeleteRecord']))
-    deleteRecordForm($mysqlObj,$TableName);
-else if (isset($_POST['f_DisplayData']))
-   displayDataForm ($mysqlObj,$TableName);
-else if (isset($_POST['f_IssueDelete']))
-   issueDeleteForm ($mysqlObj,$TableName);
-else displayMainForm();
- */
-
 $mysqlObj = createConnectionObject();
-$Title="YogurtFrenzy"; //Editor Title
-headerAndMenu($Title);
+$title="YogurtFrenzy"; //Editor Title
+headerAndMenu($title);
 
 //the following functions will display a relevant message, then the notepad.
 if (isset($_POST['f_Save'])) {
