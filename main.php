@@ -39,15 +39,35 @@ echo "
     <div class=\"body\">";
 }
 
-// textarea practice here: https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_textarea
-function displayTextArea()
+// textarea practice here:
+// https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_textarea
+function displayTextArea($fileText="")
 {
     echo "
 <!-- main text area for notepad -->
-    <textarea id=\"notepad\" name=\"notepad\" rows=\"10\" cols=\"80\"></textarea>
+    <div>
+    <textarea id=\"notepad_content\" name=\"notepad_content\" rows=\"10\" 
+        cols=\"80\">$fileText</textarea>
+    </div>
     ";
 }
 
+function saveNotepad($fileText)
+{
+    saveFile($fileText);
+    displayTextArea($fileText);
+}
+
+function openNotepad()
+{
+    $fileText = openFile();
+    displayTextArea($fileText);
+}
+
+function blankNotepad()
+{
+    displayTextArea("");
+}
 
 //+++++++++++++++++++++ MAIN 
         /* Main Loop, which should run each time the page is loaded */
@@ -72,22 +92,16 @@ $mysqlObj = createConnectionObject();
 $Title="YogurtFrenzy"; //Editor Title
 headerAndMenu($Title);
 
-echo "The text:";
-displayTextArea();
-//DisplayTextbox("text","test", 30);
-echo "<p></p>";
-
-echo "The letter or word you want to search for:";
-DisplayTextbox("text","findText", 10);
-
-DisplayButton("findButton","Find");
-
-if(array_key_exists('findButton', $_POST)) 
-{
-  findTextInFile($_POST["test"], $_POST["findText"]);
-  
+//the following functions will display a relevant message, then the notepad.
+if (isset($_POST['f_Save'])) {
+    saveNotepad($_POST['notepad_content']);
 }
-
+else if (isset($_POST['f_Open'])) {
+    openNotepad();
+}
+else    {
+    blankNotepad();
+}
 //Footers go at end
 writeFooters();
 ?>

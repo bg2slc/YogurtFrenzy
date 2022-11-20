@@ -4,7 +4,7 @@ require_once("include.php"); //left here for testing and to suppress errors
 
 //6 functions:
 //drawMenu - Primary function for drawing menus.
-//https://www.w3schools.com/howto/tryit.asp?fileName=tryhow_css_js_dropdown_hover
+//https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover
 function drawMenu()
 {
      drawFileDropDown();
@@ -21,8 +21,7 @@ function drawFileDropDown()
         displayButton("f_New", "New");
         displayButton("f_Open", "Open");
         displayButton("f_Save", "Save");
-
-   echo "
+    echo "
     </div>
     </div>
   ";
@@ -54,55 +53,53 @@ function drawFontDropDown() //code for PairB font stuff
         
         //interface code goes here.
         echo "<p>boo I'm a ghost</p>";
-      
     echo "
     </div>
     </div>
   ";
 }
 
-function saveFile($fileText) //needs one parameter
+function saveFile($content) //needs one parameter
 {
-
-   $fileName = "editor.dat";
-   $file = fopen( $fileName, "w");
-    if(!$handle)
-    {
-            echo "Error opening file.";
-    }
+    $message = "";
+    $filename = "editor.dat";
+    $handle = fopen($filename, "w");
+    $success = fwrite($handle, $content);
+    if(!$success)
+        $message = "Error Saving File.";
     else
-    {
-            echo "File Opened.";
-
-    }
-    fwrite ($file,$fileText);
-        if(!$success)
-        {
-            echo "Error Saving File.";
-        }
-        else
-        {
-            echo "File Saved.";
-        }
-    fclose($file);
+        $message = "File Saved.";
+    displayLabel($message);
+    fclose($handle);
 }
 
 function openFile()
 {
-    if (file_exists($fileName))
+    $filename = "editor.dat";
+    $text = "";
+    if (file_exists($filename))
     {
-        $handle= fopen($fileName, "r");
-        $text = fread($handle);
-        fclose($handle);
-        return($text);
+        $handle = fopen($filename, "r");
+        if(!$handle)
+            displayLabel("Error opening file.");
+        else    {
+            if(filesize($filename)>0)   {
+                $text = fread($handle, filesize($filename));
+                displayLabel("File Opened.");
+            }
+            else
+                displayLabel("editor.dat is empty");
+            fclose($handle);
+        }
     }
     else
     {
-        echo "Editor.dat does not exist. Please save file first.";
+        echo "editor.dat does not exist. Please save file first.";
     }
+    return($text);
 }
 
-//fileName is editor.dat. Display the messages below
+//filename is editor.dat. Display the messages below
 
 //-File Saved
 //-Error Saving FIle
