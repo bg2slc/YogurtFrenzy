@@ -58,9 +58,9 @@ function saveNotepad($fileText)
     displayTextArea($fileText);
 }
 
-function openNotepad($fileText)
+function openNotepad()
 {
-    openFile($fileText);
+    $fileText = openFile();
     displayTextArea($fileText);
 }
 
