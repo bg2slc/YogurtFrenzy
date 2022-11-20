@@ -61,14 +61,9 @@ function drawFontDropDown() //code for PairB font stuff
 
 function saveFile($content) //needs one parameter
 {
-    error_reporting(E_ALL);
-    $dir = 'files';
-    if ( !file_exists($dir) )
-        mkdir($dir, 0744);
-
     $message = "";
-    $filename = "files/editor.dat";
-    $handle = fopen($filename, "a");
+    $filename = "editor.dat";
+    $handle = fopen($filename, "w");
     $success = fwrite($handle, $content);
     if(!$success)
         $message = "Error Saving File.";
@@ -80,19 +75,28 @@ function saveFile($content) //needs one parameter
 
 function openFile()
 {
-    //"Error opening file.", "File Opened." go in here.
-    $filename = "./files/editor.dat";
+    $filename = "editor.dat";
+    $text = "";
     if (file_exists($filename))
     {
         $handle = fopen($filename, "r");
-        $text = fread($handle, filesize($filename));
-        fclose($handle);
-        return($text);
+        if(!$handle)
+            displayLabel("Error opening file.");
+        else    {
+            if(filesize($filename)>0)   {
+                $text = fread($handle, filesize($filename));
+                displayLabel("File Opened.");
+            }
+            else
+                displayLabel("editor.dat is empty");
+            fclose($handle);
+        }
     }
     else
     {
         echo "editor.dat does not exist. Please save file first.";
     }
+    return($text);
 }
 
 //filename is editor.dat. Display the messages below

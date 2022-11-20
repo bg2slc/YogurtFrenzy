@@ -46,7 +46,7 @@ function displayTextArea($fileText="")
     echo "
 <!-- main text area for notepad -->
     <div>
-    <textarea id=\"notepad\" name=\"notepad\" rows=\"10\" 
+    <textarea id=\"notepad_content\" name=\"notepad_content\" rows=\"10\" 
         cols=\"80\">$fileText</textarea>
     </div>
     ";
@@ -94,7 +94,7 @@ headerAndMenu($Title);
 
 //the following functions will display a relevant message, then the notepad.
 if (isset($_POST['f_Save'])) {
-    saveNotepad($_POST['f_Save']);
+    saveNotepad($_POST['notepad_content']);
 }
 else if (isset($_POST['f_Open'])) {
     openNotepad();
