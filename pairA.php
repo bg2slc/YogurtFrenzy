@@ -2,7 +2,6 @@
 //Robin and Ben's Assignment FIle
 require_once("include.php"); //left here for testing and to suppress errors
 
-
 //6 functions:
 //drawMenu - Primary function for drawing menus.
 //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover
@@ -22,8 +21,7 @@ function drawFileDropDown()
         displayButton("f_New", "New");
         displayButton("f_Open", "Open");
         displayButton("f_Save", "Save");
-
-   echo "
+    echo "
     </div>
     </div>
   ";
@@ -63,17 +61,14 @@ function drawFontDropDown() //code for PairB font stuff
 
 function saveFile($content) //needs one parameter
 {
+    error_reporting(E_ALL);
     $dir = 'files';
     if ( !file_exists($dir) )
         mkdir($dir, 0744);
 
     $message = "";
     $filename = "files/editor.dat";
-    $handle = fopen($filename, "x");
-    if(is_writable($filename))
-        echo "ERR1 NOT WRITABLE";
-    if (!$handle)
-        echo "ERR2 failed to open stream";
+    $handle = fopen($filename, "a");
     $success = fwrite($handle, $content);
     if(!$success)
         $message = "Error Saving File.";
@@ -89,8 +84,8 @@ function openFile()
     $filename = "./files/editor.dat";
     if (file_exists($filename))
     {
-        $handle= fopen($filename, "r");
-        $text = fread($handle);
+        $handle = fopen($filename, "r");
+        $text = fread($handle, filesize($filename));
         fclose($handle);
         return($text);
     }
