@@ -16,7 +16,7 @@ function drawFileDropDown()
 {
     echo "
     <div class=\"dropdown\">
-    <button class=\"dropbtn\">File</button>
+    <button class=\"dropbtn\" type=\"button\">File</button>
     <div class=\"dropdown-content\">";
         displayButton("f_New", "New");
         displayButton("f_Open", "Open");
@@ -32,7 +32,7 @@ function drawEditDropDown()
     /**<div><input type=\"checkbox\">Case sensitive?</input> <input type=\"submit\" value=\"Search\"> </input></div>*/
     echo "
     <div class=\"dropdown\">
-    <button class=\"dropbtn\">Edit</button>
+    <button class=\"dropbtn\" type=\"button\">Edit</button>
     <div class=\"dropdown-content\">
       <label>Find: </label> <input type=\"text\"></input>
       <div><input type=\"checkbox\">Case sensitive?</input>";
@@ -48,7 +48,7 @@ function drawFontDropDown() //code for PairB font stuff
     // Placeholder button
     echo "
     <div class=\"dropdown\">
-    <button class=\"dropbtn\">Font</button>
+    <button class=\"dropbtn\" type=\"button\">Font</button>
     <div class=\"dropdown-content\">";
         
         //interface code goes here.
