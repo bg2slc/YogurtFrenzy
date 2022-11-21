@@ -43,9 +43,9 @@ function displayTextArea($fileText="")
 {
     echo "
 <!-- main text area for notepad -->
-    <div>
+    <div class=\"bordered\">
     <textarea id=\"notepad_content\" name=\"notepad_content\" rows=\"10\" 
-        cols=\"80\">$fileText</textarea>
+        cols=\"80\" autofocus>$fileText</textarea>
     </div>
     ";
 }

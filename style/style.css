@@ -26,10 +26,10 @@ input[type="text"], textarea {
     font-size: 1.2em;
 }
 
-div {
-    border-left-width: 1px;
-    border-color: #123740;
-}
+/*div {
+border-left-width: 1px;
+border-color: #123740;
+}*/
 
 a:link   {
     color: #f1802d;
@@ -79,6 +79,11 @@ div.bordered   {
 
 div.control    {
     padding: 0.4em;
+}
+/* TEXTAREA */
+textarea {
+    width: 100%;
+    max-width: 100%;
 }
 
 /* DROPBTN */
