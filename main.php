@@ -3,7 +3,7 @@
 
 //+++++++++++++++++++++ SETUP
 require_once("include.php");
-require_once("pairA.php");
+
 //ERROR REPORTING - Set to true for error reporting
 //TODO: Disable this when ready for submitting
 if(true)    {
@@ -71,6 +71,108 @@ function blankNotepad()
 {
     displayLabel("Welcome to the YogurtFrenzy Editor!");
     displayTextArea("");
+}
+
+/* drawMenu() is called by headerAndMenu(), draws the three menu buttons */
+function drawMenu()
+{
+     drawFileDropDown();
+     drawEditDropDown();
+     drawFontDropDown();
+}
+
+/* drawFileDropDown() is fully functional. Each option is a post action that
+ * reloads the page with relevant message and data loaded into textarea. */
+function drawFileDropDown()
+{
+    echo "
+    <div class=\"dropdown\">
+    <button class=\"dropbtn\" type=\"button\">File</button>
+    <div class=\"dropdown-content\">";
+        displayButton("f_New", "New");
+        displayButton("f_Open", "Open");
+        displayButton("f_Save", "Save");
+    echo "
+    </div>
+    </div>
+  ";
+}
+
+/* Needs some work, waiting for functionality for pairC's findTextInFile. */
+function drawEditDropDown()
+{
+    /**<div><input type=\"checkbox\">Case sensitive?</input> <input type=\"submit\" value=\"Search\"> </input></div>*/
+    echo "
+    <div class=\"dropdown\">
+    <button class=\"dropbtn\" type=\"button\">Edit</button>
+    <div class=\"dropdown-content\">
+      <label>Find: </label> <input type=\"text\"></input>
+      <div><input type=\"checkbox\">Case sensitive?</input>";
+    displayButton("f_Search", "Search");
+    echo "</div>
+    </div>
+    </div>
+    ";
+}
+
+/* functional but empty, needs work from PairB */
+function drawFontDropDown() //code for PairB font stuff
+{
+
+    // Placeholder button
+    echo "
+    <div class=\"dropdown\">
+    <button class=\"dropbtn\" type=\"button\">Font</button>
+    <div class=\"dropdown-content\">";
+        
+        //interface code goes here.
+        echo "<p>boo I'm a ghost</p>";
+    echo "
+    </div>
+    </div>
+  ";
+}
+
+/* called by post action in drawFileDropDown */
+function saveFile($content) //needs one parameter
+{
+    $message = "";
+    $filename = "editor.dat";
+    $handle = fopen($filename, "w");
+    $success = fwrite($handle, $content);
+    if(!$success)
+        $message = "Error Saving File.";
+    else
+        $message = "File Saved.";
+    displayLabel($message);
+    fclose($handle);
+}
+
+/* called by post action in drawFileDropDown */
+function openFile()
+{
+    $filename = "editor.dat";
+    $text = "";
+    if (file_exists($filename))
+    {
+        $handle = fopen($filename, "r");
+        if(!$handle)
+            displayLabel("Error opening file.");
+        else    {
+            if(filesize($filename)>0)   {
+                $text = fread($handle, filesize($filename));
+                displayLabel("File Opened.");
+            }
+            else
+                displayLabel("editor.dat is empty");
+            fclose($handle);
+        }
+    }
+    else
+    {
+        echo "editor.dat does not exist. Please save file first.";
+    }
+    return($text);
 }
 
 //+++++++++++++++++++++ MAIN 
