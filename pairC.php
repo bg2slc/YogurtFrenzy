@@ -10,11 +10,10 @@ function findTextInFile($findtext, $text)
 
   $pos=strpos($mystring, $findme) +1;
 
-  if($pos===false)
-  {
+  if($pos===false) {
     echo "<p>String " . $findMe . " not found</p>";
-  } 
-  else {
+  } else {
     echo "<p>" . $findMe . " was found at position " . $pos . ".</p>";
   }
 }
+?>
