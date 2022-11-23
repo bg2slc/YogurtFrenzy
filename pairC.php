@@ -21,7 +21,6 @@ echo "</form>";
 if(array_key_exists('f_Search', $_POST)) 
 {
   findTextInFile($_POST['notepad_content'], $_POST['findText']);
-  
 }
 
 function findTextInFile($textValue, $findValue)
@@ -30,7 +29,6 @@ function findTextInFile($textValue, $findValue)
         $pos=strpos($textValue, $findValue);
     else
         $pos=stripos($textValue, $findValue);
-
 
   if($pos===false)
   {
@@ -47,7 +45,6 @@ function findTextInFile($textValue, $findValue)
 if(array_key_exists('f_Search', $_POST)) 
 {
   findTextInFile($_POST['notepad_content'], $_POST['findText']);
-  
 }
 
 function findTextInFile($textValue, $findValue)
