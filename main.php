@@ -6,7 +6,7 @@ require_once("include.php");
 
 //ERROR REPORTING - Set to true for error reporting
 //TODO: Disable this when ready for submitting
-if(true)    {
+if(false)    {
     error_reporting(E_ALL);
     ini_set('display_errors', 'On');
 }
@@ -20,7 +20,7 @@ function headerAndMenu($title="YogurtFrenzy")
 <head>
 	<meta charset = \"UTF-8\">
 	<title>$title</title>\n
-	<link rel =\"stylesheet\" type = \"text/css\" href=\"/style/style.css\"/>
+	<link rel =\"stylesheet\" type = \"text/css\" href=\"./style/style.css\"/>
     <script src=\"fonts.js\"></script>
 </head>
 <body>\n<form action=? method=\"post\">
