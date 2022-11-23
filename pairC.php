@@ -1,16 +1,20 @@
+<link rel = stylesheet type = text/css href = style.css>
 <?php
+require_once("include.php");
 //Pair C - Emmett and Dugan
+
+// http://localhost/pairC.php
 
 echo "<form method=POST>";
 
 echo "The text:";
-DisplayTextbox("text","test", 30);
+displayTextbox("text","test", 30);
 echo "<p></p>";
 
 echo "The letter or word you want to search for:";
-DisplayTextbox("text","findText", 10);
+displayTextbox("text","findText", 10);
 
-DisplayButton("findButton","Find");
+displayButton("findButton","Find");
 
 echo "</form>";
 if(array_key_exists('findButton', $_POST)) 
@@ -19,14 +23,14 @@ if(array_key_exists('findButton', $_POST))
   
 }
 
-function findTextInFile($findtext, $text)
+function findTextInFile($findText, $text)
 {
   //text area
-  $mystring= $findtext;
+  $myString= $findText;
   //text to search
-  $findme=$text;
+  $findMe=$text;
 
-  $pos=strpos($mystring, $findme) +1;
+  $pos=strpos($myString, $findMe) +1;
 
   if($pos===false) {
     echo "<p>String " . $findMe . " not found</p>";
