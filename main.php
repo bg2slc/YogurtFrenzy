@@ -106,7 +106,7 @@ function drawEditDropDown()
     <div class=\"dropdown\">
     <button class=\"dropbtn\" type=\"button\">Edit</button>
     <div class=\"dropdown-content\">
-      <label>Find: </label> <input type=\"text\"></input>
+      <label>Find: </label> <input type=\"text\" name=\"findText\"></input>
       <div><input type=\"checkbox\" name =\"f_checkBox\">Case sensitive?</input>";
     displayButton("f_Search", "Search");
     echo "</div>
@@ -189,10 +189,40 @@ function openFile()
     return($text);
 }
 
+//the function to find text in a file or a line of text.
+function findTextInFile($textValue, $findValue)
+{
+//took awhile because tried to do it without isset and it kept only doing the else. 
+    if(isset($_POST['f_checkBox']))
+    {
+        $pos=strpos($textValue, $findValue);
+    }
+    else
+        $pos=stripos($textValue, $findValue);
+
+
+
+  if($pos===false)
+  {
+    echo "<p>The string " . $findValue . " was not found in the string " . $textValue . "</p>";
+  } 
+  else {
+  // had to add +1 because the array starts at position 0
+    $pos = $pos +1;
+    echo " <p>The string " . $findValue . " was found in the string " . $textValue . "</p>";
+    echo "<p> and exists at position " . $pos  . "</p>";
+  }
+}
+
 //+++++++++++++++++++++ MAIN 
 $title="YogurtFrenzy"; //Editor Title
 headerAndMenu($title);
 
+//checks to see if the key f_search(the button) exists so that the code will only run when the button is clicked.
+if(array_key_exists('f_Search', $_POST))
+{
+    findTextInFile($_POST['notepad_content'], $_POST['findText']);
+}
 //the following functions will display a relevant message, then the notepad.
 if (isset($_POST['f_Save'])) {
     saveNotepad($_POST['notepad_content']);
