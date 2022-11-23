@@ -8,17 +8,17 @@ $mysqlObj = CreateConnectionObject();
 function drawFontDropDown(&$mysqlObj)
 {
     // Font Choice 
+    $FontField;
     echo "
     <form action=\"\" method=\"post\">
     <select name=\"select\" id = \"font\" onchange=\"myFunction()\">";
-
     $SelectFont = "Select fontnames.fontName from fontnames";
 	$stmt = $mysqlObj->prepare($SelectFont); 
     $stmt->bind_result($FontField);
     $stmt->execute();
     while($stmt->fetch())
 
-    echo "<option value=$FontField>$FontField</option>";
+    echo "<option value=\"$FontField\">$FontField</option>";
     echo "</select>
     </form>";
     $stmt->close();
@@ -41,4 +41,4 @@ drawFontDropDown($mysqlObj);
 WriteFooters();
 ?>
 <input type = text id = "textToChange" value = "Yelppp">
-<p id = "55">Grah</p>
+<p id = "55">This will change</p>
