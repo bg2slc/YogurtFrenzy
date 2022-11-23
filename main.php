@@ -3,6 +3,7 @@
 
 //+++++++++++++++++++++ SETUP
 require_once("include.php");
+require_once("fonts.js");
 
 //ERROR REPORTING - Set to true for error reporting
 //TODO: Disable this when ready for submitting
@@ -115,22 +116,40 @@ function drawEditDropDown()
     ";
 }
 
-/* functional but empty, needs work from PairB */
-function drawFontDropDown() //code for PairB font stuff
+function drawFontDropDown()
 {
-
-    // Placeholder button
+    $mysqlObj = createConnectionObject();
     echo "
     <div class=\"dropdown\">
     <button class=\"dropbtn\" type=\"button\">Font</button>
     <div class=\"dropdown-content\">";
-        
-        //interface code goes here.
-        echo "<p>boo I'm a ghost</p>";
-    echo "
+    // Font Choice
+    echo "<form action=\"\" method=\"post\">";
+    displayLabel("Font Style");
+    echo "<select name=\"select\" id = \"font\" onchange=\"myFunction()\">";
+    $SelectFont = "Select fontnames.fontName from fontnames";
+	$stmt = $mysqlObj->prepare($SelectFont); 
+    $stmt->bind_result($FontField);
+    $stmt->execute();
+    while($stmt->fetch())
+
+    echo "<option value=\"$FontField\">$FontField</option>";
+    echo "</select>
+    </form>";
+    $stmt->close();
+    
+    // Font Size
+    echo"<form action=\"\" method=\"post\">";
+    DisplayLabel("Font Size");
+    echo"<select name=\"fontSize\" id = \"size\"onchange=\"myFunction()\">
+        <option value=\"small\">small</option>
+        <option value=\"medium\">medium</option>
+        <option value=\"large\">large</option>
+    </select>
+    </form>
     </div>
     </div>
-  ";
+    ";
 }
 
 /* called by post action in drawFileDropDown */
@@ -176,7 +195,6 @@ function openFile()
 }
 
 //+++++++++++++++++++++ MAIN 
-$mysqlObj = createConnectionObject();
 $title="YogurtFrenzy"; //Editor Title
 headerAndMenu($title);
 
