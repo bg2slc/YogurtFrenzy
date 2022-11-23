@@ -1,37 +1,44 @@
+<link rel = stylesheet type = text/css href = style.css>
 <?php
+require_once("include.php");
 //Pair C - Emmett and Dugan
+
+// http://localhost/pairC.php
 
 echo "<form method=POST>";
 
 echo "The text:";
-DisplayTextbox("text","test", 30);
+displayTextbox("text","test", 30);
 echo "<p></p>";
 
 echo "The letter or word you want to search for:";
-DisplayTextbox("text","findText", 10);
+displayTextbox("text","findText", 10);
 
-DisplayButton("findButton","Find");
+displayButton("findButton","Find");
 
 echo "</form>";
-if(array_key_exists('findButton', $_POST)) 
+
+if(array_key_exists('f_Search', $_POST)) 
 {
-  findTextInFile($_POST["test"], $_POST["findText"]);
+  findTextInFile($_POST['notepad_content'], $_POST['findText']);
   
 }
 
-function findTextInFile($findtext, $text)
+function findTextInFile($textValue, $findValue)
 {
-  //text area
-  $mystring= $findtext;
-  //text to search
-  $findme=$text;
+    if ("f_checkBox" == TRUE)
+        $pos=strpos($textValue, $findValue);
+    else
+        $pos=stripos($textValue, $findValue);
 
-  $pos=strpos($mystring, $findme) +1;
 
-  if($pos===false) {
-    echo "<p>String " . $findMe . " not found</p>";
-  } else {
-    echo "<p>" . $findMe . " was found at position " . $pos . ".</p>";
+  if($pos===false)
+  {
+    echo "<p>The string " . $findValue . " was not found in the string " . $textValue . "</p>";
+  } 
+  else {
+    echo " <p>The string " . $findValue . " was found in the string " . $textValue . "</p>";
+    echo "<p> and exists at position " . $pos +1 . "</p>";
   }
 }
 ?>

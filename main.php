@@ -102,13 +102,12 @@ function drawFileDropDown()
 /* Needs some work, waiting for functionality for pairC's findTextInFile. */
 function drawEditDropDown()
 {
-    /**<div><input type=\"checkbox\">Case sensitive?</input> <input type=\"submit\" value=\"Search\"> </input></div>*/
     echo "
     <div class=\"dropdown\">
     <button class=\"dropbtn\" type=\"button\">Edit</button>
     <div class=\"dropdown-content\">
       <label>Find: </label> <input type=\"text\"></input>
-      <div><input type=\"checkbox\">Case sensitive?</input>";
+      <div><input type=\"checkbox\" name =\"f_checkBox\">Case sensitive?</input>";
     displayButton("f_Search", "Search");
     echo "</div>
     </div>
