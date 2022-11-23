@@ -132,19 +132,16 @@ function drawFontDropDown()
     while($stmt->fetch())
 
     echo "<option value=\"$FontField\">$FontField</option>";
-    echo "</select>
-    </form>";
+    echo "</select>";
     $stmt->close();
     
     // Font Size
-    echo"<form action=\"\" method=\"post\">";
-    DisplayLabel("Font Size");
+    displayLabel("Font Size");
     echo"<select name=\"fontSize\" id = \"size\"onchange=\"myFunction()\">
         <option value=\"small\">small</option>
         <option value=\"medium\">medium</option>
         <option value=\"large\">large</option>
     </select>
-    </form>
     </div>
     </div>
     ";
