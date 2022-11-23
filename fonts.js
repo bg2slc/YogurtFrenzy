@@ -7,7 +7,10 @@ function mine()
 function myFunction() {
     let fonts = document.getElementById("font");
     let currentFont = fonts.value;
-    document.getElementById("textToChange").innerHTML = currentFont;
+
+    // Delete line below this later its for debugging
+    document.getElementById("55").innerHTML = currentFont;
+
     let element = document.getElementById("textToChange");
     element.style.fontFamily = fonts.value;
     //document.getElementById("demo").style.fontfamily = "Comic Sans MS";

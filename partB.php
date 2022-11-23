@@ -11,11 +11,13 @@ function drawFontDropDown(&$mysqlObj)
     echo "
     <form action=\"\" method=\"post\">
     <select name=\"select\" id = \"font\" onchange=\"myFunction()\">";
+
     $SelectFont = "Select fontnames.fontName from fontnames";
 	$stmt = $mysqlObj->prepare($SelectFont); 
     $stmt->bind_result($FontField);
     $stmt->execute();
     while($stmt->fetch())
+
     echo "<option value=$FontField>$FontField</option>";
     echo "</select>
     </form>";
@@ -39,3 +41,4 @@ drawFontDropDown($mysqlObj);
 WriteFooters();
 ?>
 <input type = text id = "textToChange" value = "Yelppp">
+<p id = "55">Grah</p>
