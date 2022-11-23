@@ -21,6 +21,7 @@ function headerAndMenu($title="YogurtFrenzy")
 	<meta charset = \"UTF-8\">
 	<title>$title</title>\n
 	<link rel =\"stylesheet\" type = \"text/css\" href=\"/style/style.css\"/>
+    <script src=\"fonts.js\"></script>
 </head>
 <body>\n<form action=? method=\"post\">
     <div class=\"header\">

@@ -119,7 +119,6 @@ function drawEditDropDown()
 function drawFontDropDown()
 {
     $mysqlObj = createConnectionObject();
-    echo "<script src=\"fonts.js\"></script>";
     // Font Choice
     echo "<form action=\"\" method=\"post\">";
     displayLabel("Font Style");
