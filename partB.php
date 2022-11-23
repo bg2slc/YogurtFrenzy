@@ -7,11 +7,10 @@ $mysqlObj = CreateConnectionObject();
 
 function drawFontDropDown(&$mysqlObj)
 {
-    // Font Choice 
-    $FontField;
-    echo "
-    <form action=\"\" method=\"post\">
-    <select name=\"select\" id = \"font\" onchange=\"myFunction()\">";
+    // Font Choice
+    echo "<form action=\"\" method=\"post\">";
+    displayLabel("Font Style");
+    echo "<select name=\"select\" id = \"font\" onchange=\"myFunction()\">";
     $SelectFont = "Select fontnames.fontName from fontnames";
 	$stmt = $mysqlObj->prepare($SelectFont); 
     $stmt->bind_result($FontField);
@@ -24,9 +23,9 @@ function drawFontDropDown(&$mysqlObj)
     $stmt->close();
     
     // Font Size
-    echo"
-    <form action=\"\" method=\"post\">
-    <select name=\"fontSize\" id = \"size\"onchange=\"myFunction()\">
+    echo"<form action=\"\" method=\"post\">";
+    DisplayLabel("Font Size");
+    echo"<select name=\"fontSize\" id = \"size\"onchange=\"myFunction()\">
         <option value=\"small\">small</option>
         <option value=\"medium\">medium</option>
         <option value=\"large\">large</option>
@@ -40,5 +39,5 @@ WriteHeaders();
 drawFontDropDown($mysqlObj);
 WriteFooters();
 ?>
-<input type = text id = "textToChange" value = "Yelppp">
+<input type = text id = "notepad" value = "Yelppp">
 <p id = "55">This will change</p>
