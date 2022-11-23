@@ -122,10 +122,9 @@ function drawFontDropDown()
     <button class=\"dropbtn\" type=\"button\">Font</button>
     <div class=\"dropdown-content\">";
     // Font Choice
-    echo "<form action=\"\" method=\"post\">";
     displayLabel("Font Style");
     echo "<select name=\"select\" id = \"font\" onchange=\"myFunction()\">";
-    $SelectFont = "Select fontnames.fontName from fontnames";
+    $SelectFont = "Select fontName from fontnames";
 	$stmt = $mysqlObj->prepare($SelectFont); 
     $stmt->bind_result($FontField);
     $stmt->execute();
