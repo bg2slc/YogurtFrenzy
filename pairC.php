@@ -25,34 +25,16 @@ if(array_key_exists('f_Search', $_POST))
 
 function findTextInFile($textValue, $findValue)
 {
-    if("f_checkBox" == TRUE)
-        $pos = strpos($textValue, $findValue);
-    else
-        $pos = stripos($textValue, $findValue);
 
-    if($pos === false) {
-        echo "<p>String " . $findValue . " was not found in " . $textValue . ".</p>";
-    } else {
-        echo "<p>String " . $findValue . " was found in " . $textValue . "</p>";
-        echo "<p> and exists at position " . $pos + 1 . ".</p>";
-    }
-}
-?>
 
-////////////
-if(array_key_exists('f_Search', $_POST)) 
-{
-  findTextInFile($_POST['notepad_content'], $_POST['findText']);
-}
-
-function findTextInFile($textValue, $findValue)
-{
-    if ("f_checkBox" === TRUE)
+    if(isset($_POST['f_checkBox']))
+         
     {
         $pos=strpos($textValue, $findValue);
     }
     else
         $pos=stripos($textValue, $findValue);
+
 
 
   if($pos===false)
@@ -65,3 +47,5 @@ function findTextInFile($textValue, $findValue)
     echo "<p> and exists at position " . $pos  . "</p>";
   }
 }
+?>
+
