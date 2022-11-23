@@ -3,7 +3,6 @@
 
 //+++++++++++++++++++++ SETUP
 require_once("include.php");
-require_once("fonts.js");
 
 //ERROR REPORTING - Set to true for error reporting
 //TODO: Disable this when ready for submitting
