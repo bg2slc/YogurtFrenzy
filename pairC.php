@@ -17,25 +17,28 @@ displayTextbox("text","findText", 10);
 displayButton("findButton","Find");
 
 echo "</form>";
-if(array_key_exists('findButton', $_POST)) 
+
+if(array_key_exists('f_Search', $_POST)) 
 {
-  findTextInFile($_POST["test"], $_POST["findText"]);
+  findTextInFile($_POST['notepad_content'], $_POST['findText']);
   
 }
 
-function findTextInFile($findText, $text)
+function findTextInFile($textValue, $findValue)
 {
-  //text area
-  $myString= $findText;
-  //text to search
-  $findMe=$text;
+    if ("f_checkBox" == TRUE)
+        $pos=strpos($textValue, $findValue);
+    else
+        $pos=stripos($textValue, $findValue);
 
-  $pos=strpos($myString, $findMe) +1;
 
-  if($pos===false) {
-    echo "<p>String " . $findMe . " not found</p>";
-  } else {
-    echo "<p>" . $findMe . " was found at position " . $pos . ".</p>";
+  if($pos===false)
+  {
+    echo "<p>The string " . $findValue . " was not found in the string " . $textValue . "</p>";
+  } 
+  else {
+    echo " <p>The string " . $findValue . " was found in the string " . $textValue . "</p>";
+    echo "<p> and exists at position " . $pos +1 . "</p>";
   }
 }
 ?>
